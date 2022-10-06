@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Gemunu+Libre:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    font-family: 'Gemunu Libre', sans-serif;
+    width: 100%;
+    background: url('img/old-black-background-grunge-texture-dark-wallpaper-blackboard-chalkboard-room-wall.jpg');
+    overflow: hidden;
+}
+
+
+.card-container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+    padding: 2rem;
+    margin: auto;
+}
+
+.card {
+    position: relative;
+    cursor: pointer;
+    height: 280px;
+    border-radius: 18px;
+    background-color: rgb(82,78,78);
+    text-align: center;
+    transition: all .4s ease;
+}
+
+
+/* card-image styles */
+.card-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1rem;
+    text-align: left;
+    border-radius: 1rem;
+    background-image: linear-gradient(to top, rgb(0,0,0) 20%, transparent 40%), url('img/pexels-noureddine-belfethi-10014846.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-image i.bxs-left-arrow-alt {
+    font-size: 1.7rem;
+    padding: .4rem;
+    border-radius: 50%;
+    color: #111;
+    background-color: rgba(255,255,255,0.568);
+    opacity: 0;
+}
+
+.card-image i.bx-heart {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    background-color: rgba(255,255,255,0.568);
+    padding: .5rem;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    transition: all .2s ease;
+}
+
+.card-image h2 {
+    font-size: 1.6rem;
+    color: #fff;
+}
+
+
+.card:nth-child(2) .card-image {
+    background-image: url('img/4.jpeg');
+}
+.card:nth-child(3) .card-image {
+    background-image: url('img/8.jpeg');
+}
+
+/* card-author styles */
+.card-author {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+
+.card-author img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #fff;
+    margin-right: .5rem;
+}
+
+.card-author .author-details {
+    text-align: left;
+}
+
+.card-author .author-name {
+    font-size: .9rem;
+    color: #fff;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.card-author .date {
+    color: #fafafa;
+    font-size: .75rem;
+}
+
+/* card-text styles */
+.card-text {
+    margin: 1rem;
+    text-align: left;
+    display: none;
+}
+
+.card-text p {
+    color: #fafafa;
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+/* card-stats styles */
+.card-stats {
+    display: none;
+}
+
+.card-stats .stat {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    color: #fff;
+}
+
+
+.card-stats .stat i {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+
+/* card animation  */
+.card:hover {
+    padding: 0;
+    height: 500px;
+    transform: scale(1.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #111;
+}
+
+.card:hover .card-text,
+.card:hover .card-stats {
+    display: block;
+}
+
+.card:hover .card-image {
+    width: 100%;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.card:hover .card-image i.bxs-left-arrow-alt {
+    opacity: 1;
+}
+
+.card:hover .card-image i.bx-heart {
+    top: auto;
+    bottom: -1rem;
+    background-color: rgb(255,7,110);
+    color: #fff;
+}
+
+.card:hover .card-author {
+    position: initial;
+    margin: 1rem 0 0 2rem;
+}
+
+.card:hover .card-stats {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: transparent;
+}
+
+.card:hover .card-stats .stat {
+    width: 2.2rem;
+    height: 2.2rem;
+    margin: 1rem;
+    color: #979696;
+    background-color: rgb(59,59,59);
+    border-radius: 50%;
+    transition: all .2s ease;
+}
+
+.card:hover .card-stats .stat:hover {
+    transform: scale(1.1);
+    color: #fff;
+    background-color: rgb(255,7,110);
+}
+
+
+@media (min-width:800px) {
+    .card-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
